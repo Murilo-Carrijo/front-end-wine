@@ -7,8 +7,7 @@ export const FilterBars = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  width: 20%;
+  width: 30%;
 
   h3 {
     font: 700 16px Neo Sans, sans-serif;

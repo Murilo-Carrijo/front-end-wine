@@ -1,5 +1,6 @@
 
 import { FilterBars } from "../style/components/FilterBar";
+
 export const FilterBar = () => {
   return (
     <FilterBars>
