@@ -1,19 +1,21 @@
 import type { NextPage } from 'next';
 import React from 'react';
 import Head from 'next/head';
+import { Header } from '../components/Header';
 
 import { Container } from '../style/pages/Home'
 
 const Home: React.FC = () => {
   return (
-    <Container>
+    <div>
       <Head>
         <title>Wine Home Page</title>
       </Head>
-
-       <h1>Hello World</h1>
-
-    </Container>
+      <Header />
+      <Container>
+        <h1>Hello World</h1>
+      </Container>
+    </div>
   )
 }
 
