@@ -1,5 +1,7 @@
-import { fetchAPI } from '../utils/fetchAPI';
 import { useState, useEffect } from 'react';
+import { fetchAPI } from '../utils/fetchAPI';
+import { setLocalStorage } from '../utils/localStorage';
+import Iwine from "../Interface/Iwines";
 
 import { WineCard } from '../style/components/WineCards';
 import { ContainerWines } from '../style/components/ContainerWines';
@@ -9,14 +11,15 @@ export const WineCards = () => {
   
   useEffect(() => {
     const data = fetchAPI().then( res => {
-      setWines(res.items);
+      setWines(res); 
     });
   }, []);
-  console.log(wines);
   
+  const cartItem: [] = [];
+
   return (
     <ContainerWines>
-      { wines.map((wine) => (
+      { wines.map((wine: Iwine) => (
         <div>
           <WineCard key={wine.id}>
             <img src={ wine.image } alt={ wine.name } />
@@ -24,7 +27,11 @@ export const WineCards = () => {
             <h5>Sócio Wine R$ { wine.priceMember } </h5>
             <p>Não Sócio R$ { wine.priceNonMember } </p>
           </WineCard>
-          <button>Adicionar</button>
+          <button
+            onClick={ () => setLocalStorage(cartItem, wine) }
+          >
+            Adicionar
+          </button>
         </div>
       ))}
     </ContainerWines> 
