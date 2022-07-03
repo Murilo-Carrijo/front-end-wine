@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
 import { Headers } from '../style/components/Header';
 import { LupaWithe } from './LupaWithe';
 import { UserWithe } from './UserWithe';
 import { Wine } from './Wine';
+import Context from '../context/Context';
+import Iwine from '../Interface/Iwines';
 
 export const Header = () => {
-  const [products, setProducts] = useState([]);
+  const { products, setProducts } = useContext(Context);
 
   useEffect(() => {
-    setProducts(JSON.parse(localStorage.getItem('Cart')))
-  });
-  
+    const items: Iwine[] = (JSON.parse(localStorage.getItem('Cart')));
+    setProducts(items);
+  }, []); 
+
   return (
     <Headers>
       <img alt="Wine" src="	https://img.wine.com.br/logo/wine/black/wine.svg" />
@@ -28,7 +31,7 @@ export const Header = () => {
         </button>
         <button>
           <Wine />
-          <span>{ products ? products.length : 0 }</span>
+          { products && <span>{ products.length }</span> }
         </button>
       </div>
     </Headers>

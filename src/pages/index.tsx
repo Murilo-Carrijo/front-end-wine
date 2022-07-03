@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import React from 'react';
 import Head from 'next/head';
-
+import Provider from '../context/Provider';
 import { Header } from '../components/Header';
 import { FilterBar } from '../components/FilterBar';
 import { WineCards } from '../components/WineCards';
@@ -10,7 +10,7 @@ import { Container } from '../style/pages/Home';
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <Provider>
       <Head>
         <title>Wine Home Page</title>
       </Head>
@@ -19,7 +19,7 @@ const Home: React.FC = () => {
         <FilterBar />
         <WineCards />
       </Container>
-    </div>
+    </Provider>
   )
 }
 

@@ -6,9 +6,13 @@ export const Headers = styled.div`
   background: #FFFFFF;
   border-bottom: 1px solid #CCCCCC;
   display: flex;
+  flex-warp: warp;
   height: 100px;
   justify-content: space-around;
-  flex-warp: warp;
+
+  p {
+    margin: 16px;
+  }
 
   button {
     background: #FFFFFF;
