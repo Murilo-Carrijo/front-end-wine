@@ -1,4 +1,5 @@
 import { useEffect, useContext } from 'react';
+
 import { Headers } from '../style/components/Header';
 import { LupaWithe } from './LupaWithe';
 import { UserWithe } from './UserWithe';
@@ -7,12 +8,12 @@ import Context from '../context/Context';
 import Iwine from '../Interface/Iwines';
 
 export const Header = () => {
-  const { products, setProducts } = useContext(Context);
+  const { products, setProducts, renderSearchBar, setRenderSearchBar } = useContext(Context);
 
   useEffect(() => {
     const items: Iwine[] = (JSON.parse(localStorage.getItem('Cart')));
     setProducts(items);
-  }, []); 
+  }, []);  
 
   return (
     <Headers>
@@ -23,7 +24,10 @@ export const Header = () => {
       <p>Ofertas</p>
       <p>Eventos</p>
       <div>
-        <button>
+        <button
+          onClick={ () => setRenderSearchBar(!renderSearchBar) }
+          type="button"
+        >
         <LupaWithe />
         </button>
         <button>

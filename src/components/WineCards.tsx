@@ -2,12 +2,13 @@ import { useContext ,useEffect } from 'react';
 // import { fetchAllAPI, fetchAPI } from '../utils/fetchAPI';
 import Iwine from "../Interface/Iwines";
 import Context from '../context/Context';
+import { SearchBar } from './SearchBar';
 
 import { WineCard } from '../style/components/WineCards';
 import { ContainerWines } from '../style/components/ContainerWines';
 
 export const WineCards = () => { 
-  const { wines, setProducts } = useContext(Context);
+  const { wines, setProducts, renderSearchBar } = useContext(Context);
 
   console.log(wines);
   const MAX_LENGTH: number = 9;
@@ -32,6 +33,7 @@ export const WineCards = () => {
 
   return (
     <ContainerWines>
+      { renderSearchBar && <SearchBar />}
       { wines.map((wine: Iwine, index) => (
         index < MAX_LENGTH && index > MIN_LENGTH &&
         <div key={wine.id}>

@@ -7,6 +7,9 @@ const Provider = ({ children }: IProvider): JSX.Element => {
   const [products, setProducts] = useState<Iwine[]>([]);
   const [wines, setWines] = useState<Iwine[]>([]);
   const [allWines, setAllWines] = useState<Iwine[]>([]);
+  const [selectFilter, setSelectFilter] = useState([{ radio: '', text: '' }]);
+  const [filterInfo, setFilterInfor] = useState({});
+  const [renderSearchBar, setRenderSearchBar] = useState(false);
 
   useEffect(() => {
     fetchAPI().then( res => {
@@ -23,6 +26,12 @@ const Provider = ({ children }: IProvider): JSX.Element => {
     setWines,
     allWines,
     setAllWines,
+    selectFilter,
+    setSelectFilter,
+    filterInfo,
+    setFilterInfor,
+    renderSearchBar,
+    setRenderSearchBar
   };
 
   return (
