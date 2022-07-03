@@ -24,14 +24,18 @@ export const WineCard = styled.div`
   }
 
   h4 {
+    align-items: center;
     display: flex;
     justify-content: center;
     text-align: center;
   }
 
-  h5 {
+  h3 {
+    align-items: center;
+    color: #B6116E;
     display: flex;
     justify-content: center;
+    padding-left: 4px;
     text-align: center;
   }
 

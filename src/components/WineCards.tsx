@@ -35,7 +35,7 @@ export const WineCards = () => {
           <WineCard>
             <img src={ wine.image } alt={ wine.name } />
             <h4>{ wine.name }</h4>
-            <h5>Sócio Wine R$ { wine.priceMember.toFixed(2) } </h5>
+            <h4>Sócio Wine <h3>R$ { wine.priceMember.toFixed(2) }</h3> </h4>
             <p>Não Sócio R$ { wine.priceNonMember.toFixed(2) } </p>
           </WineCard>
           <button

@@ -62,7 +62,7 @@ const ShoppingCart = () => {
                 <WineCard>
                   <img src={ product.image } alt={ product.name } />
                   <h4>{ product.name }</h4>
-                  <h5>Sócio product R$ { product.priceMember.toFixed(2) } </h5>
+                  <h4>Sócio Wine <h3>R$ { product.priceMember.toFixed(2) }</h3> </h4>
                   <p>Não Sócio R$ { product.priceNonMember.toFixed(2) } </p>
                 </WineCard>
                 <button
