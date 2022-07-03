@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Iwine from '../Interface/Iwines';
 
@@ -11,36 +12,79 @@ const ShoppingCart = () => {
   useEffect(() => {
     const items: Iwine[] = (JSON.parse(localStorage.getItem('Cart')));
     setProducts(items);
-  }, []);
+  }, [setProducts]);
+
+  const setLocalStorage = (wine: Iwine) => {
+    const items = JSON.parse(localStorage.getItem('Cart'));
+    if (!items || items === [])
+    localStorage.setItem('Cart', JSON.stringify([wine]));
+    if (items) {
+      items.push(wine)
+      localStorage.setItem('Cart', JSON.stringify(items));
+      setProducts(items);
+    }
+  }
+
+  const removeLocalStorage = (wine: Iwine) => {
+    const items = JSON.parse(localStorage.getItem('Cart'));
+    const newItems = items.filter((item) => item.id !== wine.id);
+    localStorage.setItem('Cart', JSON.stringify(newItems));
+    setProducts(newItems);
+    
+  }
 
   return (
     <>
-    <ContainerShoppingCart>
-      <h2>
-      Total para membros R$ {''} 
-      { products.map((product) => (
-          product.priceMember
-        )).reduce((previousValue, currentValue) => previousValue + currentValue, initialValue)
+      { !products || products.length === 0 ? 
+        <ContainerShoppingCart>
+          <h1>Seu carrinho está vazio! <Link href="/">Voltar para a Loja</Link></h1>
+        </ContainerShoppingCart> :
+          <div>
+            <ContainerShoppingCart>
+            <h2>
+            Total para membros R$ {''} 
+            { products.map((product) => (
+                product.priceMember
+              )).reduce((previousValue, currentValue) => previousValue + currentValue, initialValue).toFixed(2)
+            }
+            </h2>
+            <h2>
+            Total para não membros R$ {''}  
+            { products.map((product) => (
+                product.priceNonMember
+              )).reduce((previousValue, currentValue) => previousValue + currentValue, initialValue).toFixed(2)
+            }
+            </h2>
+            </ContainerShoppingCart>
+            <ContainerShoppingCart>
+            { products.map((product, i) => (
+              <div key={i}>
+                <WineCard>
+                  <img src={ product.image } alt={ product.name } />
+                  <h4>{ product.name }</h4>
+                  <h5>Sócio product R$ { product.priceMember.toFixed(2) } </h5>
+                  <p>Não Sócio R$ { product.priceNonMember.toFixed(2) } </p>
+                </WineCard>
+                <button
+                  onClick={ () => {
+                  setLocalStorage(product);
+                  } }
+                >
+                  Adiciona
+                </button>
+                <button
+                  onClick={ () => {
+                  removeLocalStorage(product);
+                  } }
+                >
+                  Remover
+                </button>
+              </div>
+              ))} 
+            </ContainerShoppingCart>
+          </div>
+        
       }
-      </h2>
-      <h2>
-      Total para não membros R$ {''}  
-      { products.map((product) => (
-          product.priceNonMember
-        )).reduce((previousValue, currentValue) => previousValue + currentValue, initialValue)
-      }
-      </h2>
-    </ContainerShoppingCart>
-      <ContainerShoppingCart>
-        { products.map((product) => (
-          <WineCard>
-            <img src={ product.image } alt={ product.name } />
-            <h4>{ product.name }</h4>
-            <h5>Sócio product R$ { product.priceMember.toFixed(2) } </h5>
-            <p>Não Sócio R$ { product.priceNonMember.toFixed(2) } </p>
-          </WineCard>     
-          ))} 
-      </ContainerShoppingCart>
     </>
   )
 }

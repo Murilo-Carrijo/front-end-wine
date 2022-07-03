@@ -12,8 +12,8 @@ export const Header = () => {
 
   useEffect(() => {
     const items: Iwine[] = (JSON.parse(localStorage.getItem('Cart')));
-    setProducts(items);
-  }, []);  
+    products && setProducts(items);
+  }, [setProducts]);  
 
   return (
     <Headers>
