@@ -17,6 +17,12 @@ const Provider = ({ children }: IProvider): JSX.Element => {
     });
   }, [setWines]);
 
+
+  useEffect(() => {
+    const items: Iwine[] = (JSON.parse(localStorage.getItem('Cart')));
+    products && setProducts(items);
+  }, [setProducts]); 
+
   const wineContext = {
     products,
     setProducts,

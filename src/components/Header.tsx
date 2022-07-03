@@ -1,19 +1,13 @@
 import Link from 'next/link';
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { Headers } from '../style/components/Header';
 import { LupaWithe } from './LupaWithe';
 import { UserWithe } from './UserWithe';
 import { Wine } from './Wine';
 import Context from '../context/Context';
-import Iwine from '../Interface/Iwines';
 
 export const Header = () => {
-  const { products, setProducts, renderSearchBar, setRenderSearchBar } = useContext(Context);
-
-  useEffect(() => {
-    const items: Iwine[] = (JSON.parse(localStorage.getItem('Cart')));
-    products && setProducts(items);
-  }, [setProducts]);  
+  const { products, renderSearchBar, setRenderSearchBar } = useContext(Context);
 
   return (
     <Headers>
