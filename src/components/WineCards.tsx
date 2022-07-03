@@ -1,5 +1,4 @@
 import { useContext ,useEffect } from 'react';
-// import { fetchAllAPI, fetchAPI } from '../utils/fetchAPI';
 import Iwine from "../Interface/Iwines";
 import Context from '../context/Context';
 import { SearchBar } from './SearchBar';
@@ -10,12 +9,8 @@ import { ContainerWines } from '../style/components/ContainerWines';
 export const WineCards = () => { 
   const { wines, setProducts, renderSearchBar } = useContext(Context);
 
-  console.log(wines);
   const MAX_LENGTH: number = 9;
   const MIN_LENGTH: number = 0;
-  
-
-  const cartItem: [] = [];
 
   const cartItems = (wine) => {
     setProducts((items: Iwine[]) => items && [...items, wine]);    

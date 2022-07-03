@@ -1,12 +1,7 @@
-import type { NextPage } from 'next';
 import React from 'react';
 import Head from 'next/head';
 import Provider from '../context/Provider';
-import { Header } from '../components/Header';
-import { FilterBar } from '../components/FilterBar';
-import { WineCards } from '../components/WineCards';
-
-import { Container } from '../style/pages/Home';
+import Store from './Store'
 
 const Home: React.FC = () => {
   return (
@@ -14,11 +9,7 @@ const Home: React.FC = () => {
       <Head>
         <title>Wine Home Page</title>
       </Head>
-      <Header />
-      <Container>
-        <FilterBar />
-        <WineCards />
-      </Container>
+      <Store />
     </Provider>
   )
 }

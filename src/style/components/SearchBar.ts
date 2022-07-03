@@ -4,7 +4,6 @@ export const Search = styled.div`
   align-content: center;
   align-items: center;
   display: flex;
-  flex-warp: warp;
   height: 100px;
   justify-content: space-around;
   width: 100%;
@@ -15,5 +14,13 @@ export const Search = styled.div`
     text-align: center;
     padding: 8px;
     width: 50%;
+  }
+
+  button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    width: 100px;
   }
 `;

@@ -1,5 +1,5 @@
+import Link from 'next/link';
 import { useEffect, useContext } from 'react';
-
 import { Headers } from '../style/components/Header';
 import { LupaWithe } from './LupaWithe';
 import { UserWithe } from './UserWithe';
@@ -33,10 +33,12 @@ export const Header = () => {
         <button>
           <UserWithe />
         </button>
-        <button>
-          <Wine />
-          { products && <span>{ products.length }</span> }
-        </button>
+        <Link href="/ShoppingCart">
+          <a>
+            <Wine />
+            { products && <span>{ products.length }</span> }
+          </a>
+        </Link>
       </div>
     </Headers>
   );
