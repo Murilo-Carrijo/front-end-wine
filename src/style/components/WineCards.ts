@@ -7,7 +7,7 @@ export const WineCard = styled.div`
   flex-direction: column;
   height: 450px;
   justify-content: space-between;
-  margin:16px;
+  margin: 11px;
   padding: 16px;
   width: 300px;
   

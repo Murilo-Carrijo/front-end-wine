@@ -37,7 +37,11 @@ const ShoppingCart = () => {
     <>
       { !products || products.length === 0 ? 
         <ContainerShoppingCart>
-          <h1>Seu carrinho está vazio! <Link href="/">Voltar para a Loja</Link></h1>
+          <h1>
+            Você ainda não escolheu seus produtos.
+            <p>{''}</p>
+            <Link href="/">Voltar para a loja</Link>
+          </h1>
         </ContainerShoppingCart> :
           <div>
             <ContainerShoppingCart>

@@ -5,7 +5,7 @@ export const ContainerWines = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 108px;
+  margin-top: 54px;
   overflow: hidden;
   width: 70%;
 

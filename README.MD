@@ -6,11 +6,6 @@
 - Foi utilizada a API fornecida pela empresa para renderizar os produtos.
 - O projeto possui duas paginas sendo a pagina principal da loja e a pagina do carrinho de compras.
 
-## Dependências do sistema
-
-- [NodeJS >= v14.15.4](https://nodejs.org/en/download/)
-  - NPM v7.11.2
-
 ## Estrutura
 
     Ecommerce-React-App
