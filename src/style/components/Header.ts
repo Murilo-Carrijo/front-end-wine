@@ -21,7 +21,7 @@ export const Headers = styled.div`
   }
   
   span {
-    background: #f5f5f5;
+    background-color: #f5f5f5;
     border-radius: 50%;
     color: #5cb79f;
     font-size: 11px;
@@ -43,8 +43,8 @@ export const HeadersButton = styled.div`
 
   button {
     background-color: #FFFFFF;
-    justify-content: center;
     border: none;
+    justify-content: center;
   }
 
   img {
