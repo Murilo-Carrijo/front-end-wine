@@ -1,19 +1,16 @@
-import type { NextPage } from 'next';
 import React from 'react';
 import Head from 'next/head';
-
-import { Container } from '../style/pages/Home'
+import Provider from '../context/Provider';
+import Store from './Store'
 
 const Home: React.FC = () => {
   return (
-    <Container>
+    <Provider>
       <Head>
         <title>Wine Home Page</title>
       </Head>
-
-       <h1>Hello World</h1>
-
-    </Container>
+      <Store />
+    </Provider>
   )
 }
 
