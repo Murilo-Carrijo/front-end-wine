@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WineCard = styled.div`
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);
   display flex;
   flex-direction: column;

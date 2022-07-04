@@ -12,7 +12,7 @@ export const WineCards = () => {
   const MAX_LENGTH: number = 9;
   const MIN_LENGTH: number = 0;
 
-  const cartItems = (wine) => {
+  const cartItems = (wine: Iwine) => {
     setProducts((items: Iwine[]) => items && [...items, wine]);    
   }
 

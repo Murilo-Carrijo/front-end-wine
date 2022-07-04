@@ -5,7 +5,7 @@ import Iwine from '../Interface/Iwines';
 import { ContainerShoppingCart } from '../style/pages/ContainerShoppingCart';
 import { WineCard } from '../style/components/WineCards';
 
-const ShoppingCart = () => {
+const ShoppingCart: React.FC = () => {
   const [ products, setProducts ] = useState<Iwine[]>([]);
   const initialValue = 0;
 
@@ -27,7 +27,7 @@ const ShoppingCart = () => {
 
   const removeLocalStorage = (wine: Iwine) => {
     const items = JSON.parse(localStorage.getItem('Cart'));
-    const newItems = items.filter((item) => item.id !== wine.id);
+    const newItems = items.filter((item: Iwine) => item.id !== wine.id);
     localStorage.setItem('Cart', JSON.stringify(newItems));
     setProducts(newItems);
     

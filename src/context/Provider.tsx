@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { fetchAPI } from '../utils/fetchAPI';
 import Iwine from '../Interface/Iwines';
-import Context from './Context';
+import Context, { ITheme } from './Context';
 
-const Provider = ({ children }: IProvider): JSX.Element => {
+const Provider = ({ children }: ITheme): JSX.Element => {
   const [products, setProducts] = useState<Iwine[]>([]);
   const [wines, setWines] = useState<Iwine[]>([]);
   const [allWines, setAllWines] = useState<Iwine[]>([]);
@@ -16,7 +16,6 @@ const Provider = ({ children }: IProvider): JSX.Element => {
       }
     });
   }, [setWines]);
-
 
   useEffect(() => {
     const items: Iwine[] = (JSON.parse(localStorage.getItem('Cart')));
