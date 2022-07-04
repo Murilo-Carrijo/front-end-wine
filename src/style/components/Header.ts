@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Headers = styled.div`
   align-content: center;
   align-items: center;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border-bottom: 1px solid #CCCCCC;
   display: flex;
   flex-warp: warp;
@@ -15,7 +15,7 @@ export const Headers = styled.div`
   }
 
   button {
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     justify-content: center;
     border: none;
   }
@@ -30,3 +30,27 @@ export const Headers = styled.div`
     width: 20px;
   }
 `;
+
+export const HeadersButton = styled.div`
+  align-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #CCCCCC;
+  display: flex;
+  flex-warp: warp;
+  height: 100px;
+  justify-content: space-around;
+
+  button {
+    background-color: #FFFFFF;
+    justify-content: center;
+    border: none;
+  }
+
+  img {
+    background-color: none;
+    margin-left: 54px;
+    width: 54px;
+  }
+`;
+

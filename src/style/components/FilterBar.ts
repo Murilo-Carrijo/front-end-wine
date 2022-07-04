@@ -10,12 +10,14 @@ export const FilterBars = styled.div`
   width: 30%;
 
   h3 {
-    font: 700 16px Neo Sans, sans-serif;
+    color: #000000;
+    font: 700 24px Neo Sans, sans-serif;
     padding: 32px;
     padding-left: 25%;
   }
 
   h4 {
+    color: #333333;
     font: 700 16px Neo Sans, sans-serif;
     padding: 32px;
     padding-left: 25%;

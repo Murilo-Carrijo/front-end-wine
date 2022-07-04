@@ -1,4 +1,4 @@
-import { useContext ,useEffect } from 'react';
+import { useContext } from 'react';
 import Iwine from "../Interface/Iwines";
 import Context from '../context/Context';
 import { SearchBar } from './SearchBar';
